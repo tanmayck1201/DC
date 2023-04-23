@@ -16,7 +16,7 @@ a = [   [0, 1, 0, 0, 0],
 
 flag = 0
 
-def aman(a, i, k):
+def deadlock(a, i, k):
    
     end = 5
    
@@ -32,7 +32,7 @@ def aman(a, i, k):
                 break
                 
             print(f' S{k+1} ==> S{x+1}      ({i+1}, {k+1}, {x+1})')
-            aman(a,i,x)
+            deadlock(a,i,x)
 
 
 print("CHANDY-MISRA-HAAS DISTRIBUTED DEADLOCK DETECTION ALGORITHM")
@@ -50,7 +50,7 @@ for k in range(end):
     if(a[j][k]==1):
         
         print(f' S{j+1} ==> s{k+1}      ({i}, {j+1}, {k+1})')
-        aman(a,j,k)
+        deadlock(a,j,k)
 
 
 if(flag == 0): 
